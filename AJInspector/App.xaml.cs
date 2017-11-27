@@ -8,10 +8,14 @@ namespace AJInspector
     {
         public static bool UseMockDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
+        MasterDetailPage masterdetail;
+        Page detailpage;
+        Page masterpage;
 
         public App()
         {
             InitializeComponent();
+            masterdetail = new AJInspectorPage();
 
             if (UseMockDataStore)
                 DependencyService.Register<MockDataStore>();
@@ -19,9 +23,18 @@ namespace AJInspector
                 DependencyService.Register<CloudDataStore>();
 
             if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new AJInspectorPage();
+                MainPage = masterdetail;
             else
-                MainPage = new AJInspectorPage();
+                MainPage = masterdetail;
+
+        }
+
+        protected override void OnStart()
+        {
+
+            masterpage = masterdetail.Master;
+            detailpage = masterdetail.Detail;
+            MainPage = masterdetail;
         }
     }
 }

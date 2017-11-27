@@ -11,5 +11,11 @@ namespace AJInspector
         {
             InitializeComponent();
         }
+
+        void FormB_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new FormB());
+            //Application.Current.MainPage.IsPresented = false;
+        }
     }
 }

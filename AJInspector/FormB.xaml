@@ -12,39 +12,36 @@
           
                 <StackLayout Orientation="Vertical" Margin="15,30,15,15">
 
-                     
-
-                    <StackLayout> 
-                        <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
-                        <DatePicker TextColor="Silver"></DatePicker>
-                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver"/>
-                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver"/>
-                    </StackLayout> 
-
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Label Text="Detail Inspection" FontFamily="" WidthRequest="165"/>
-                            <Label Text="Select an area of defect" WidthRequest="165"/>
+                            <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="Silver" FontSize="18"/>
+                            <Label Text="Select an area of defect" WidthRequest="165" TextColor="Silver" FontAttributes="Italic"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
-                            <Button BorderRadius="30" WidthRequest="60" BackgroundColor="" Text="+" />
+                            <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center"/>
                         </StackLayout>
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal">   
-                        <Image Aspect="AspectFill" HorizontalOptions="Start"/>
-                        <Image Source="cam.png" Aspect="AspectFill" HorizontalOptions="End" />
+                
+
+                    <StackLayout Orientation="Horizontal"> 
+                        <StackLayout Orientation="Vertical">
+                            <Image Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Image Source="cam.png" Aspect="AspectFill" HorizontalOptions="End" WidthRequest="100" />
+                        </StackLayout>
                     </StackLayout> 
 
-                    <StackLayout  >
-                        <Editor TextColor="silver"/>
-                    </StackLayout>
+                   
 
                     <StackLayout Margin="0,20">
+                        <Editor TextColor="Silver" Text="Enter defect detail here" HeightRequest="160" />
+
+                    </StackLayout>
+                    <StackLayout>
                         <Button Text="Next >>" BackgroundColor="Lime"/> 
                     </StackLayout>
-                    
-                    
 
                 </StackLayout>
 

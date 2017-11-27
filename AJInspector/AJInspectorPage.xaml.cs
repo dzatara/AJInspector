@@ -10,7 +10,6 @@ namespace AJInspector
         public AJInspectorPage()
         {
             InitializeComponent();
-            //Detail = new Welcome();
             IsPresented = false;
 
         }

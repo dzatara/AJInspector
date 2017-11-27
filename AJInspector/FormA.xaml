@@ -13,7 +13,7 @@
                 <StackLayout Orientation="Vertical" Margin="15,30,15,15">
 
                     <StackLayout> 
-                        <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                         <DatePicker TextColor="Silver"></DatePicker>
                         <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver"/>
                         <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver"/>
@@ -35,21 +35,21 @@
                     </StackLayout>
 
                     <StackLayout>   
-                        <Label Text="Driver Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <Label Text="Driver Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                         <Entry Placeholder="Driver Name" PlaceholderColor="Silver"/>
                     </StackLayout> 
 
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">                            
-                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver" Keyboard="Telephone"/>
                         </StackLayout>
                     </StackLayout>
 
                     <StackLayout Margin="0,20">
-                        <Button Text="Next >>" BackgroundColor="Lime"/> 
+                        <Button Text="Next >>" BackgroundColor="Lime" Clicked="FormB_Clicked"/> 
                     </StackLayout>
                     
                     
