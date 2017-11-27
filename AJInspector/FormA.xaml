@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns ="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AJInspector.FormA"
+    Title="Inspect">
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome_dark.png" Aspect="AspectFill" />
+        
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+          
+                <StackLayout Orientation="Vertical" Margin="15,30,15,15">
+
+                    <StackLayout> 
+                        <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <DatePicker TextColor="Silver"></DatePicker>
+                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver"/>
+                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver"/>
+                    </StackLayout> 
+
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout Orientation="Vertical">
+                            <Entry Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Picker Title="Engine Cap" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                            <Picker Title="Wheels" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Picker Title="Vehicle Type" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                            <Entry Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Picker Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                            <Entry Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>   
+                        <Label Text="Driver Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <Entry Placeholder="Driver Name" PlaceholderColor="Silver"/>
+                    </StackLayout> 
+
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout Orientation="Vertical">
+                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">                            
+                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,20">
+                        <Button Text="Next >>" BackgroundColor="Lime"/> 
+                    </StackLayout>
+                    
+                    
+
+                </StackLayout>
+
+            </ScrollView>
+        </AbsoluteLayout>
+
+</ContentPage>

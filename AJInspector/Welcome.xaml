@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns ="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AJInspector.Welcome"
+    Title="Welcome">
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome2.png" Aspect="AspectFill" />
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
+
+            <StackLayout Orientation="Vertical" Padding="20" AbsoluteLayout.LayoutFlags="SizeProportional" >
+                <Image Aspect="AspectFit" Source="autocheck_logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
+
+            
+                <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand"></SearchBar>
+                <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime"  VerticalOptions="End"></Button>
+                <Button Text="+ Client Record" VerticalOptions="End"></Button>
+            </StackLayout>
+            
+        </ScrollView>
+
+    </AbsoluteLayout>
+
+
+</ContentPage>

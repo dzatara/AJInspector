@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns ="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="AJInspector.FormB"
+    Title="Inspect 2">
+
+    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome_dark.png" Aspect="AspectFill" />
+        
+            <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+          
+                <StackLayout Orientation="Vertical" Margin="15,30,15,15">
+
+                     
+
+                    <StackLayout> 
+                        <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto" FontAttributes="Bold"/>
+                        <DatePicker TextColor="Silver"></DatePicker>
+                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver"/>
+                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver"/>
+                    </StackLayout> 
+
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Detail Inspection" FontFamily="" WidthRequest="165"/>
+                            <Label Text="Select an area of defect" WidthRequest="165"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Button BorderRadius="30" WidthRequest="60" BackgroundColor="" Text="+" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">   
+                        <Image Aspect="AspectFill" HorizontalOptions="Start"/>
+                        <Image Source="cam.png" Aspect="AspectFill" HorizontalOptions="End" />
+                    </StackLayout> 
+
+                    <StackLayout  >
+                        <Editor TextColor="silver"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,20">
+                        <Button Text="Next >>" BackgroundColor="Lime"/> 
+                    </StackLayout>
+                    
+                    
+
+                </StackLayout>
+
+            </ScrollView>
+    </AbsoluteLayout>
+
+</ContentPage>
