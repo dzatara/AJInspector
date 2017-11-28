@@ -36,5 +36,7 @@ namespace AJInspector
             detailpage = masterdetail.Detail;
             MainPage = masterdetail;
         }
+
+
     }
 }

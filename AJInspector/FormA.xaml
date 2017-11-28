@@ -3,7 +3,7 @@
 	xmlns ="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="AJInspector.FormA"
-    Title="Inspect">
+    Title="Vehicle/Driver Details">
 
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome_dark.png" Aspect="AspectFill" />

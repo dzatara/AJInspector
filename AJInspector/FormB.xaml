@@ -3,7 +3,7 @@
 	xmlns ="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="AJInspector.FormB"
-    Title="Inspect 2">
+    Title="Body Detail Inspection">
 
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome_dark.png" Aspect="AspectFill" />
@@ -11,36 +11,43 @@
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
           
                 <StackLayout Orientation="Vertical" Margin="15,30,15,15">
+                                                                      
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"></RowDefinition>
+                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="120"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="165"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="Select an area of defect" WidthRequest="165" TextColor="Silver" FontAttributes="Italic" Grid.Row="0" Grid.Column="0" Margin="0,25,0,0"/>
 
-                    <StackLayout Orientation="Horizontal" >
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="Silver" FontSize="18"/>
-                            <Label Text="Select an area of defect" WidthRequest="165" TextColor="Silver" FontAttributes="Italic"/>
-                        </StackLayout>
-                        <StackLayout Orientation="Vertical">
-                            <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </StackLayout>
-                    </StackLayout>
-
+                        <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                        <Image Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150" Grid.Row="2" Grid.Column="0"/>
+                        <Image x:Name="image" Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="200" Grid.Row="2" Grid.Column="1"/>
+                        <Button Text="camera" x:Name="takePhoto" TextColor="Silver" BackgroundColor="#29ABE2" Image="CamButton.png" Grid.Row="3" Grid.Column="1"></Button>
+                    </Grid>
                 
-
-                    <StackLayout Orientation="Horizontal"> 
+                    <!--<StackLayout Orientation="Horizontal"> 
                         <StackLayout Orientation="Vertical">
                             <Image Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
-                            <Image Source="cam.png" Aspect="AspectFill" HorizontalOptions="End" WidthRequest="100" />
+                            <Image x:Name="image" Aspect="AspectFill" HorizontalOptions="End" WidthRequest="200" />
+                            <Button Text="capture image" x:Name="takePhoto" TextColor="Silver" BackgroundColor="#F7931E" Image="cam.png" ></Button>
                         </StackLayout>
-                    </StackLayout> 
-
-                   
-
+                    </StackLayout> -->
+                                       
                     <StackLayout Margin="0,20">
                         <Editor TextColor="Silver" Text="Enter defect detail here" HeightRequest="160" />
 
                     </StackLayout>
                     <StackLayout>
-                        <Button Text="Next >>" BackgroundColor="Lime"/> 
+                        <Button Text="Next >>" BackgroundColor="Lime" Clicked="FormC_Clicked"/> 
                     </StackLayout>
 
                 </StackLayout>
