@@ -148,9 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -163,9 +160,23 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable\CarFront.png" />
     <AndroidResource Include="Resources\drawable\CamButton.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\CarFL3_4.png" />
+    <AndroidResource Include="Resources\drawable\CarLTop.png" />
+    <AndroidResource Include="Resources\drawable\CarRear.png" />
+    <AndroidResource Include="Resources\drawable\CarRL3_4.png" />
+    <AndroidResource Include="Resources\drawable\CarRR3_4.png" />
+    <AndroidResource Include="Resources\drawable\CarSide.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Black.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-hdpi\" />
   </ItemGroup>
   <Import Project="..\AJInspector\AJInspector.projitems" Label="Shared" Condition="Exists('..\AJInspector\AJInspector.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

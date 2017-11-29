@@ -15,7 +15,7 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="60"></RowDefinition>
-                            <RowDefinition Height="80"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
                             <RowDefinition Height="120"></RowDefinition>
                             <RowDefinition Height="40"></RowDefinition>
                         </Grid.RowDefinitions>
@@ -25,9 +25,42 @@
                         </Grid.ColumnDefinitions>
                         <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18" Grid.Row="0" Grid.Column="0"/>
                         <Label Text="Select an area of defect" WidthRequest="165" TextColor="Silver" FontAttributes="Italic" Grid.Row="0" Grid.Column="0" Margin="0,25,0,0"/>
+                        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="45"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>                            
+                            </Grid.ColumnDefinitions>
+                            <Image Source="CarFront.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0"/>
+                            <Button x:Name="b1" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="CarFront_Clicked"/>
 
+                            <Image Source="CarFL3_4.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="1"/>
+                            <Button x:Name="b2" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="1" Clicked="CarFL3_Clicked"/> 
+                            
+                            <Image Source="CarLTop.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="2"/>
+                            <Button x:Name="b3" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="2" Clicked="CarLTop_Clicked"/>
+                            
+                            <Image Source="CarSide.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="3"/>
+                            <Button x:Name="b4" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="3" Clicked="CarSide_Clicked"/>
+                            
+                            <Image Source="CarRL3_4.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="4"/>
+                            <Button x:Name="b5" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="4" Clicked="CarRL3_Clicked"/>
+                            
+                            <Image Source="CarRear.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="5"/>
+                            <Button x:Name="b6" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="5" Clicked="CarRear_Clicked"/>
+                            
+                            <Image Source="CarRR3_4.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="6"/>
+                            <Button x:Name="b7" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="6" Clicked="CarRR3_Clicked"/>
+                        </Grid>
                         <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
-                        <Image Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150" Grid.Row="2" Grid.Column="0"/>
+                        <Image x:Name="thumb" Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150" Grid.Row="2" Grid.Column="0"/>
                         <Image x:Name="image" Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="200" Grid.Row="2" Grid.Column="1"/>
                         <Button Text="camera" x:Name="takePhoto" TextColor="Silver" BackgroundColor="#29ABE2" Image="CamButton.png" Grid.Row="3" Grid.Column="1"></Button>
                     </Grid>

@@ -31,15 +31,15 @@
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Engine Oil quality" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Coolant Level" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Washer Fluid Level" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Spark Plug Condition" WidthRequest="200" TextColor="Silver" />
+                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Ignition System" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Compressor" WidthRequest="200" TextColor="Silver" />
                     </StackLayout>
                     <StackLayout>
-                        <Picker x:Name="EngineOilLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        <Picker x:Name="EngineOilLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" ><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="EngineOilQuality" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="CoolantLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="WasherFluidLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="SparkPlugCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        <Picker x:Name="IgnitionSystem" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="Compressor" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                     </StackLayout>
                 </StackLayout>
@@ -48,14 +48,14 @@
                 
                 <StackLayout Orientation="Horizontal">
                     <StackLayout Orientation="Vertical">                    
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front wheel Bearings" WidthRequest="200" TextColor="Silver" />
+                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Suspension" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Break Pad Condition" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Tyre Condition" WidthRequest="200" TextColor="Silver" />
                         <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Rear Tyre Condition" WidthRequest="200" TextColor="Silver" />
 
                     </StackLayout>
                     <StackLayout>
-                        <Picker x:Name="FrontWheelBearings" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        <Picker x:Name="FrontSuspension" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="BreakPadCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="FrontTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
                         <Picker x:Name="RearTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>

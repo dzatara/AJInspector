@@ -15,36 +15,36 @@
                     <StackLayout> 
                         <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                         <DatePicker TextColor="Silver"></DatePicker>
-                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver"/>
-                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver"/>
+                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver" TextColor="Silver"/>
+                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver" TextColor="Silver"/>
                     </StackLayout> 
 
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Entry Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver"/>
-                            <Entry Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
+                            <Entry Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                             <Picker Title="Engine Cap" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
                             <Picker Title="Wheels" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Picker Title="Vehicle Type" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
-                            <Entry Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                             <Picker Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
-                            <Entry Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver"/>
+                            <Entry Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                         </StackLayout>
                     </StackLayout>
 
                     <StackLayout>   
                         <Label Text="Driver Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
-                        <Entry Placeholder="Driver Name" PlaceholderColor="Silver"/>
+                        <Entry Placeholder="Driver Name" PlaceholderColor="Silver" TextColor="Silver"/>
                     </StackLayout> 
 
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email"/>
+                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email" TextColor="Silver"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">                            
-                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver" Keyboard="Telephone"/>
+                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver" Keyboard="Telephone" TextColor="Silver"/>
                         </StackLayout>
                     </StackLayout>
 

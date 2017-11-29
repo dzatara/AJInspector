@@ -53,5 +53,95 @@ namespace AJInspector
         }
 
 
+        void CarFront_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarFront.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarFL3_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarFL3_4.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarLTop_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarLTop.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarSide_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarSide.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarRL3_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarRL3_4.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarRear_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarRear.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0.3);
+            b7.BackgroundColor = new Color(255, 255, 255, 0);
+        }
+
+        void CarRR3_Clicked(object sender, System.EventArgs e)
+        {
+            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            thumb.Source = "CarRR3_4.png";
+            b1.BackgroundColor = new Color(255, 255, 255, 0);
+            b2.BackgroundColor = new Color(255, 255, 255, 0);
+            b3.BackgroundColor = new Color(255, 255, 255, 0);
+            b4.BackgroundColor = new Color(255, 255, 255, 0);
+            b5.BackgroundColor = new Color(255, 255, 255, 0);
+            b6.BackgroundColor = new Color(255, 255, 255, 0);
+            b7.BackgroundColor = new Color(255, 255, 255, 0.3);
+        }
     }
 }
