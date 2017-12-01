@@ -51,6 +51,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)FormD.xaml.cs">
       <DependentUpon>FormD.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
