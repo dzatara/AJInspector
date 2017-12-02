@@ -16,7 +16,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="60"></RowDefinition>
                             <RowDefinition Height="50"></RowDefinition>
-                            <RowDefinition Height="120"></RowDefinition>
+                            <RowDefinition Height="140"></RowDefinition>
                             <RowDefinition Height="40"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -60,8 +60,98 @@
                             <Button x:Name="b7" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="6" Clicked="CarRR3_Clicked"/>
                         </Grid>
                         <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
-                        <Image x:Name="thumb" Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="150" Grid.Row="2" Grid.Column="0"/>
-                        <Image x:Name="image" Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="200" Grid.Row="2" Grid.Column="1"/>
+                        <Image x:Name="thumb" Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="170" Grid.Row="2" Grid.Column="0"/>
+                        <Grid Grid.Row="2" Grid.Column="0" Margin="5,5,5,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="markerImage" Aspect="AspectFill" Grid.Row="0" Grid.Column="0"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="0" Clicked="ToggleMarker_Clicked"/>
+
+                            <Image x:Name="markerImage1" Aspect="AspectFill" Grid.Row="0" Grid.Column="1"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="1" Clicked="ToggleMarker1_Clicked"/>
+
+                            <Image x:Name="markerImage2" Aspect="AspectFill" Grid.Row="0" Grid.Column="2"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="2" Clicked="ToggleMarker2_Clicked"/>
+
+                            <Image x:Name="markerImage3" Aspect="AspectFill" Grid.Row="0" Grid.Column="3"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="3" Clicked="ToggleMarker3_Clicked"/>
+
+                            <Image x:Name="markerImage4" Aspect="AspectFill" Grid.Row="0" Grid.Column="4"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="4" Clicked="ToggleMarker4_Clicked"/>
+
+                            <Image x:Name="markerImage5" Aspect="AspectFill" Grid.Row="1" Grid.Column="0"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="1" Grid.Column="0" Clicked="ToggleMarker5_Clicked"/>
+
+                            <Image x:Name="markerImage6" Aspect="AspectFill" Grid.Row="1" Grid.Column="1"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="1" Grid.Column="1" Clicked="ToggleMarker6_Clicked"/>
+
+                            <Image x:Name="markerImage7" Aspect="AspectFill" Grid.Row="1" Grid.Column="2"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="1" Grid.Column="2" Clicked="ToggleMarker7_Clicked"/>
+
+                            <Image x:Name="markerImage8" Aspect="AspectFill" Grid.Row="1" Grid.Column="3"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="1" Grid.Column="3" Clicked="ToggleMarker8_Clicked"/>
+
+                            <Image x:Name="markerImage9" Aspect="AspectFill" Grid.Row="1" Grid.Column="4"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="1" Grid.Column="4" Clicked="ToggleMarker9_Clicked"/>
+
+                            <Image x:Name="markerImage10" Aspect="AspectFill" Grid.Row="2" Grid.Column="0"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="2" Grid.Column="0" Clicked="ToggleMarker10_Clicked"/>
+
+                            <Image x:Name="markerImage11" Aspect="AspectFill" Grid.Row="2" Grid.Column="1"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="2" Grid.Column="1" Clicked="ToggleMarker11_Clicked"/>
+
+                            <Image x:Name="markerImage12" Aspect="AspectFill" Grid.Row="2" Grid.Column="2"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="2" Grid.Column="2" Clicked="ToggleMarker12_Clicked"/>
+
+                            <Image x:Name="markerImage13" Aspect="AspectFill" Grid.Row="2" Grid.Column="3"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="2" Grid.Column="3" Clicked="ToggleMarker13_Clicked"/>
+
+                            <Image x:Name="markerImage14" Aspect="AspectFill" Grid.Row="2" Grid.Column="4"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="2" Grid.Column="4" Clicked="ToggleMarker14_Clicked"/>
+
+                            <Image x:Name="markerImage15" Aspect="AspectFill" Grid.Row="3" Grid.Column="0"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="3" Grid.Column="0" Clicked="ToggleMarker15_Clicked"/>
+
+                            <Image x:Name="markerImage16" Aspect="AspectFill" Grid.Row="3" Grid.Column="1"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="3" Grid.Column="1" Clicked="ToggleMarker16_Clicked"/>
+
+                            <Image x:Name="markerImage17" Aspect="AspectFill" Grid.Row="3" Grid.Column="2"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="3" Grid.Column="2" Clicked="ToggleMarker17_Clicked"/>
+
+                            <Image x:Name="markerImage18" Aspect="AspectFill" Grid.Row="3" Grid.Column="3"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="3" Grid.Column="3" Clicked="ToggleMarker18_Clicked"/>
+
+                            <Image x:Name="markerImage19" Aspect="AspectFill" Grid.Row="3" Grid.Column="4"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="3" Grid.Column="4" Clicked="ToggleMarker19_Clicked"/>
+
+                            <Image x:Name="markerImage20" Aspect="AspectFill" Grid.Row="4" Grid.Column="0"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="4" Grid.Column="0" Clicked="ToggleMarker20_Clicked"/>
+
+                            <Image x:Name="markerImage21" Aspect="AspectFill" Grid.Row="4" Grid.Column="1"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="4" Grid.Column="1" Clicked="ToggleMarker21_Clicked"/>
+
+                            <Image x:Name="markerImage22" Aspect="AspectFill" Grid.Row="4" Grid.Column="2"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="4" Grid.Column="2" Clicked="ToggleMarker22_Clicked"/>
+
+                            <Image x:Name="markerImage23" Aspect="AspectFill" Grid.Row="4" Grid.Column="3"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="4" Grid.Column="3" Clicked="ToggleMarker23_Clicked"/>
+
+                            <Image x:Name="markerImage24" Aspect="AspectFill" Grid.Row="4" Grid.Column="4"/>
+                            <Button BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="4" Grid.Column="4" Clicked="ToggleMarker24_Clicked"/>
+                        </Grid>
+                        <Image x:Name="image" Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="180" Grid.Row="2" Grid.Column="1"/>
                         <Button Text="camera" x:Name="takePhoto" TextColor="Silver" BackgroundColor="#29ABE2" Image="CamButton.png" Grid.Row="3" Grid.Column="1"></Button>
                     </Grid>
                 
@@ -76,7 +166,7 @@
                     </StackLayout> -->
                                        
                     <StackLayout Margin="0,20">
-                        <Editor TextColor="Silver" Text="Enter defect detail here" HeightRequest="160" />
+                        <Editor TextColor="Silver" Text="Enter defect detail here" HeightRequest="120" />
 
                     </StackLayout>
                     <StackLayout>

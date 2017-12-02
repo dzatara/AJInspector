@@ -190,6 +190,7 @@
     <AndroidResource Include="Resources\drawable\CarRL3_4.png" />
     <AndroidResource Include="Resources\drawable\CarRR3_4.png" />
     <AndroidResource Include="Resources\drawable\CarSide.png" />
+    <AndroidResource Include="Resources\drawable\marker.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Black.ttf" />
