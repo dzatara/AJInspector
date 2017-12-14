@@ -28,7 +28,7 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            this.BindingContext = this.vehicleData;
+            //this.BindingContext = this.vehicleData;
         }
 
         void Odo_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)

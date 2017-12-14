@@ -14,13 +14,14 @@ namespace AJInspector
         static readonly object locker = new object();
 
 
+        private readonly SQLiteConnection _connection;
+        private string DatabaseName;
+
+
         ISQLite SQLite
         {
             get { return DependencyService.Get<ISQLite>(); }
         }
-
-        private readonly SQLiteConnection _connection;
-        private string DatabaseName;
 
         public DataStore(string databaseName)
         {

@@ -12,6 +12,12 @@ namespace AJInspector
             InitializeComponent();
         }
 
+        void Find_SearchButtonPressed(object sender, System.EventArgs e)
+        {
+            DisplayAlert("seach", "click registered in search", "OK");
+            //open card showing records matching search or display data not found message
+        }
+
         void FormA_Clicked(object sender, System.EventArgs e)
         {
             Navigation.PushAsync(new FormA());

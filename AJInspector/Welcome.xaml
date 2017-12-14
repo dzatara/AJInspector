@@ -3,25 +3,28 @@
 	xmlns ="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="AJInspector.Welcome"
-    Title="Welcome">
+    Title="Welcome"
+    Icon="menu_icon.png">
 
-    <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome2.png" Aspect="AspectFill" />
-
-        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
-
-            <StackLayout Orientation="Vertical" Padding="20" AbsoluteLayout.LayoutFlags="SizeProportional" >
-                <Image Aspect="AspectFit" Source="autocheck_logo.png" HorizontalOptions="Center" VerticalOptions="Start"/>
-
-            
-                <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand"></SearchBar>
-                <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime"  VerticalOptions="End"></Button>
-                <Button Text="+ Client Record" VerticalOptions="End" Clicked="AddVehicle_Clicked"></Button>
-            </StackLayout>
-            
-        </ScrollView>
-
-    </AbsoluteLayout>
+            <ContentPage.Content>
+                
+                <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="bkgwelcome2.png" Aspect="AspectFill" />
+                    <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        <StackLayout Orientation="Vertical" Padding="20,10,20,10" AbsoluteLayout.LayoutFlags="SizeProportional">
+                            <Image Aspect="AspectFit" Source="autocheck_logo.png" HorizontalOptions="Center" VerticalOptions="Start" />
+                            <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand" SearchButtonPressed="Find_SearchButtonPressed">
+                            </SearchBar>
+                            <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime" VerticalOptions="End" >
+                            </Button>
+                            <Button Text="+ Client Record" Clicked="AddVehicle_Clicked" VerticalOptions="End" >
+                            </Button>
+                        </StackLayout>
+                    </ScrollView>
+                </AbsoluteLayout>
+                
+            </ContentPage.Content>
 
 
 </ContentPage>
+

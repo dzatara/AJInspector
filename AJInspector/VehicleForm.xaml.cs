@@ -30,7 +30,7 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            this.BindingContext = this.vehicleData;
+            // this.BindingContext = this.vehicleData;
         }
 
 
