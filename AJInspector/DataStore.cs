@@ -99,6 +99,7 @@ namespace AJInspector
             catch (SQLiteException ex)
             {
                 return -1;
+
             }
         }
     }

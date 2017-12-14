@@ -30,19 +30,49 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            //this.BindingContext = this.vehicleData;
+            this.BindingContext = this.vehicleData;
+        }
+
+
+        void Odo_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            var OdoReading = Odo.Text;
+            var number = DumbParse(OdoReading);
+            Odo.Text = $"{number:#,###}";
+        }
+
+        void Tel_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
+        {
+            var TelReading = Tel.Text;
+            var number = DumbParse(TelReading);
+            Tel.Text = $"{number:0## ### ####}";
+        }
+
+        public static int DumbParse(string input)
+        {
+            var number = 0;
+            int multiply = 1;
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                if (Char.IsDigit(input[i]))
+                {
+                    number += (input[i] - '0') * (multiply);
+                    multiply *= 10;
+                }
+            }
+            return number;
         }
 
         #region VIN lookup api call
 
-        void VIN_PropertyChangedAsync(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        void VIN_Completed(object sender, System.EventArgs e)
         {
             //Query external Data for VIN and display values
             string TheVIN = ((Entry)sender).Text;
             string url = "https://api.edmunds.com/api/inventory/v2/vins/" + TheVIN + "?fmt=json";
 
-            //JsonValue json = FetchDetailsAsync(url).Result;
-            //ParseAndDisplay(json);
+            //   JsonValue json = FetchDetailsAsync(url).Result;
+            //   ParseAndDisplay(json);
         }
 
         private async Task<JsonValue> FetchDetailsAsync(string url)

@@ -24,8 +24,8 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            DisplayAlert("Database - 'Inspector'", "Database and tables created succesfully", "OK");
-            DisplayAlert("Database", "Database now contains: " + database.FindNumberRecords() + "Vehicle Entries", "OK");
+            // DisplayAlert("Database - 'Inspector'", "Database and tables created succesfully", "OK");
+            DisplayAlert("Database", "Database now contains: " + database.FindNumberRecords() + " Vehicle Entries", "OK");
             //this.BindingContext = this.database;
         }
 

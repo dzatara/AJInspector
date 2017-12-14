@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-	xmlns ="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="AJInspector.FormA"
+    xmlns ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AJInspector.FormA"
     Title="Vehicle/Driver Details">
 
     <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -14,41 +14,70 @@
 
                     <StackLayout> 
                         <Label Text="Vehicle Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
-                        <DatePicker TextColor="Silver"></DatePicker>
-                        <Entry Placeholder="Name Of Inspector" PlaceholderColor="Silver" TextColor="Silver"/>
-                        <Entry Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver" TextColor="Silver"/>
+                        <DatePicker x:Name="Dtoday" TextColor="Silver" Date="{Binding DateIn x:Static sys:DateTime.Now}"  >
+                            <DatePicker.Format>dd MMMM, yyyy</DatePicker.Format>
+                        </DatePicker>
+                        <Entry x:Name="Inspector" Placeholder="Name Of Inspector" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding Inspector}" />
+                        <Entry x:Name="VIN" Placeholder="VIN" WidthRequest="345" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding VIN}" PropertyChanged="VIN_PropertyChangedAsync" />
                     </StackLayout> 
 
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Entry Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
-                            <Entry Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
-                            <Entry Placeholder="Make" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
-                            <Picker Title="Engine Cap" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
-                            <Picker Title="Wheels" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                            <Entry x:Name="VReg" Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding VReg}"/>
+                            <Entry x:Name="VMake" Placeholder="Make" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding Make}"/>
+                            <Entry x:Name="MfYear" Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding MfYear}"/>
+                            <Entry x:Name="EngCap" Placeholder="Engine Cap" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding EngCap}" />
+                            <Picker x:Name="Wheels" Title="Wheels" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Capped</x:String>
+                                        <x:String>Alloy</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
-                            <Picker Title="Vehicle Type" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
-                            <Entry Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
-                            <Picker Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"
-                                
-                            />
-                                
-                            <Entry Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
+                            <Picker x:Name="VType" Title="Vehicle Type" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver" >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>SUV</x:String>
+                                        <x:String>Sedan</x:String>
+                                        <x:String>Hatchback</x:String>
+                                        <x:String>Sport-back</x:String>
+                                        <x:String>Pick-Up</x:String>
+                                        <x:String>Coupé</x:String>
+                                        <x:String>Van</x:String>
+                                        <x:String>Limousine</x:String>
+                                        <x:String>Pick-Up</x:String>
+                                        <x:String>Mini-Van</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Entry x:Name="VModel" Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding VModel}"/>
+                            <Picker x:Name="VTrans" Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver" >
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Automatic</x:String>
+                                        <x:String>Manual</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Entry x:Name="Odo" Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding Odo}" TextChanged="Odo_TextChanged"/>
                         </StackLayout>
                     </StackLayout>
 
                     <StackLayout>   
                         <Label Text="Driver Data" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
-                        <Entry Placeholder="Driver Name" PlaceholderColor="Silver" TextColor="Silver"/>
+                        <Entry x:Name="Driver" Placeholder="Driver Name" PlaceholderColor="Silver" TextColor="Silver" Text="{Binding Driver}"/>
                     </StackLayout> 
 
                     <StackLayout Orientation="Horizontal" >
                         <StackLayout Orientation="Vertical">
-                            <Entry Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email" TextColor="Silver"/>
+                            <Entry x:Name="Email" Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email" TextColor="Silver" Text="{Binding Email}"/>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical">                            
-                            <Entry Placeholder="Phone No." WidthRequest="165" PlaceholderColor="Silver" Keyboard="Telephone" TextColor="Silver"/>
+                        <StackLayout Orientation="Horizontal">                            
+                            <Label Text="+233" TextColor="Yellow" WidthRequest="35" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="Tel" Placeholder="Phone No."  WidthRequest="130" PlaceholderColor="Silver" Keyboard="Telephone" TextColor="Silver" Text="{Binding Tel}" TextChanged="Tel_TextChanged"/>
                         </StackLayout>
                     </StackLayout>
 
