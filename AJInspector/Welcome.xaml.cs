@@ -11,5 +11,16 @@ namespace AJInspector
         {
             InitializeComponent();
         }
+
+        void FormA_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new FormA());
+
+        }
+        void AddVehicle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new VehicleForm());
+
+        }
     }
 }

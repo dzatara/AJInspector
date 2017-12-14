@@ -12,11 +12,11 @@
                 <StackLayout Margin="5,30,5,5">
                     <Label Text="AInspector Menu">
                     </Label>
-                    <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" >
+                    <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" SearchButtonPressed="Find_SearchButtonPressed" >
                     </SearchBar>
                     <Button Text="Inspect" BackgroundColor="Lime" Clicked="FormA_Clicked">
                     </Button>
-                    <Button Text="+ Client Record" BackgroundColor="Silver">
+                    <Button Text="+ Client Record" BackgroundColor="Silver" Clicked="AddVehicle_Clicked">
                     </Button>
                 </StackLayout>
                 
@@ -34,11 +34,11 @@
                     <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
                         <StackLayout Orientation="Vertical" Padding="20" AbsoluteLayout.LayoutFlags="SizeProportional">
                             <Image Aspect="AspectFit" Source="autocheck_logo.png" HorizontalOptions="Center" VerticalOptions="Start" />
-                            <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                            <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand" SearchButtonPressed="Find_SearchButtonPressed">
                             </SearchBar>
-                            <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime" VerticalOptions="End">
+                            <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime" VerticalOptions="End" >
                             </Button>
-                            <Button Text="+ Client Record" VerticalOptions="End">
+                            <Button Text="+ Client Record" Clicked="AddVehicle_Clicked" VerticalOptions="End" >
                             </Button>
                         </StackLayout>
                     </ScrollView>

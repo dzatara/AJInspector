@@ -16,7 +16,7 @@
             
                 <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" VerticalOptions="EndAndExpand"></SearchBar>
                 <Button Text="Inspect" Clicked="FormA_Clicked" BackgroundColor="Lime"  VerticalOptions="End"></Button>
-                <Button Text="+ Client Record" VerticalOptions="End"></Button>
+                <Button Text="+ Client Record" VerticalOptions="End" Clicked="AddVehicle_Clicked"></Button>
             </StackLayout>
             
         </ScrollView>

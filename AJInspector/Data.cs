@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 using Xamarin.Forms;
 
 namespace AJInspector
 {
-    public class Vehicle
+    public class Vehicle : INotifyPropertyChanged
     {
+
         [PrimaryKey, AutoIncrement]
         public int VehicleID { get; set; }
 
-        public DateTime DateIn { get; set; }
+
+        public string DateIn { get; set; }
 
         public string Inspector { get; set; }
 
@@ -20,6 +24,8 @@ namespace AJInspector
         public string VReg { get; set; }
 
         public string VType { get; set; }
+
+        public string Make { get; set; }
 
         public string MfYear { get; set; }
 
@@ -31,7 +37,7 @@ namespace AJInspector
 
         public string Wheels { get; set; }
 
-        public int Odo { get; set; }
+        public string Odo { get; set; }
 
         public string Driver { get; set; }
 
@@ -41,7 +47,19 @@ namespace AJInspector
 
         public override string ToString()
         {
-            return string.Format("[Vehicle: VehicleID={0}, DateIn={1}, Inspector={2}, VIN={3}, VReg={4}, VType={5}, MfYear={6}, VModel={7}, EngCap={8}, VTrans={9}, Wheels={10}, Odo={11}, Driver={12}, Email={13}, Tel={14}]", VehicleID, DateIn, Inspector, VIN, VReg, VType, MfYear, VModel, EngCap, VTrans, Wheels, Odo, Driver, Email, Tel);
+            return string.Format("[Vehicle: VehicleID={0}, DateIn={1}, Inspector={2}, VIN={3}, VReg={4}, VType={5}, Make={6}, MfYear={7}, VModel={8}, EngCap={9}, VTrans={10}, Wheels={11}, Odo={12}, Driver={13}, Email={14}, Tel={15}]", VehicleID, DateIn, Inspector, VIN, VReg, VType, Make, MfYear, VModel, EngCap, VTrans, Wheels, Odo, Driver, Email, Tel);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public static implicit operator ObservableCollection<object>(Vehicle v)
+        {
+            throw new NotImplementedException();
         }
     }
 

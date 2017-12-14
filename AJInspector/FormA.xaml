@@ -23,13 +23,17 @@
                         <StackLayout Orientation="Vertical">
                             <Entry Placeholder="Vehicle Registation" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                             <Entry Placeholder="Year" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
+                            <Entry Placeholder="Make" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                             <Picker Title="Engine Cap" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
                             <Picker Title="Wheels" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Picker Title="Vehicle Type" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
                             <Entry Placeholder="Model" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
-                            <Picker Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"/>
+                            <Picker Title="Transmission" WidthRequest="165" BackgroundColor="Gray" TextColor="Silver"
+                                
+                            />
+                                
                             <Entry Placeholder="Odometer" WidthRequest="165" PlaceholderColor="Silver" TextColor="Silver"/>
                         </StackLayout>
                     </StackLayout>
