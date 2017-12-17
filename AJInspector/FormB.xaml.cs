@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+
 using Plugin.Media;
-using System.Linq;
 using Xamarin.Forms;
 
 
@@ -12,11 +9,19 @@ namespace AJInspector
 {
     public partial class FormB : ContentPage
     {
+        string picLocation;
+        string angle;
+        string dlocation;
+        int vId = Convert.ToInt32(Application.Current.Properties["currentVehicle"]);
 
+
+        private DataStore detailData;
 
         public FormB()
         {
             InitializeComponent();
+            detailData = new DataStore("Inspector");
+
             takePhoto.Clicked += async (sender, args) =>
             {
 
@@ -37,6 +42,7 @@ namespace AJInspector
                     return;
 
                 await DisplayAlert("File Location", file.Path, "OK");
+                picLocation = file.Path;
 
                 image.Source = ImageSource.FromStream(() =>
                 {
@@ -49,13 +55,42 @@ namespace AJInspector
 
         void FormC_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new FormC());
+            if (detailInfo.Text == null)
+            {
+
+                DisplayAlert("No Vehicle added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
+
+            }
+            else
+            {
+
+                var record = new Detail
+                {
+                    VID = vId,
+                    Orientation = "",
+                    Picture = picLocation,
+                    IssueDetail = detailInfo.Text,
+
+                };
+
+                detailData.SaveItem(record, 0);
+
+
+                int lastid = detailData.GetLastid();
+
+
+                DisplayAlert("+ Detail", "Detail record " + lastid + " added succesfully", "OK");
+
+
+                Navigation.PushAsync(new FormC());
+            }
         }
 
 
         void CarFront_Clicked(object sender, System.EventArgs e)
         {
             //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            #region CarFront icon selection
             thumb.Source = "CarFront.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0.3);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -64,11 +99,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarFL3_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Front left 3/4 clicked", "Clik Yo!", "OK");
+            #region Car Front Left 3/4 icon selection
             thumb.Source = "CarFL3_4.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0.3);
@@ -77,11 +114,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarLTop_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Left Top clicked", "Clik Yo!", "OK");
+            #region Car Left Top icon selection
             thumb.Source = "CarLTop.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -90,11 +129,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarSide_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Side clicked", "Clik Yo!", "OK");
+            #region Car Side icon selection
             thumb.Source = "CarSide.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -103,11 +144,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarRL3_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Right Lower third clicked", "Clik Yo!", "OK");
+            #region Car Right Lower third icon selection
             thumb.Source = "CarRL3_4.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -116,11 +159,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0.3);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarRear_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Rear clicked", "Clik Yo!", "OK");
+            #region Car Rear icon selection
             thumb.Source = "CarRear.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -129,11 +174,13 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0.3);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            #endregion
         }
 
         void CarRR3_Clicked(object sender, System.EventArgs e)
         {
-            //DisplayAlert("Car Front clicked", "Clik Yo!", "OK");
+            //DisplayAlert("Car Right Rear 3/4 clicked", "Clik Yo!", "OK");
+            #region Car Right Rear 3/4 icon selection
             thumb.Source = "CarRR3_4.png";
             b1.BackgroundColor = new Color(255, 255, 255, 0);
             b2.BackgroundColor = new Color(255, 255, 255, 0);
@@ -142,8 +189,10 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0.3);
+            #endregion
         }
 
+        #region Marker toggle methods
         void ToggleMarker_Clicked(object sender, System.EventArgs e)
         {
             if ((markerImage.Source != null))
@@ -444,5 +493,6 @@ namespace AJInspector
             }
 
         }
+        #endregion
     }
 }

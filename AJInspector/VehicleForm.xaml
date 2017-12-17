@@ -77,8 +77,8 @@
                             <Entry x:Name="Email" Placeholder="e-mail Address" WidthRequest="165" PlaceholderColor="Silver" Keyboard="Email" TextColor="Silver" Text="{Binding Email}"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >                            
-                            <Label Text="+233" TextColor="Yellow" WidthRequest="35" VerticalTextAlignment="Center"/>
-                            <Entry x:Name="Tel" Placeholder="Phone No."  WidthRequest="130" PlaceholderColor="Silver" Keyboard="Telephone" TextColor="Silver" Text="{Binding Tel}" TextChanged="Tel_TextChanged"/>
+                            <Label Text="+233" TextColor="Yellow" WidthRequest="40" VerticalTextAlignment="Center"/>
+                            <Entry x:Name="Tel" Placeholder="Phone No."  WidthRequest="125" PlaceholderColor="Silver" Keyboard="Telephone" TextColor="Silver" Text="{Binding Tel}" TextChanged="Tel_TextChanged"/>
                         </StackLayout>
                     </StackLayout>
 

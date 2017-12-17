@@ -3,8 +3,6 @@ using SQLite;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 
 namespace AJInspector
@@ -99,9 +97,26 @@ namespace AJInspector
             }
             catch (SQLiteException ex)
             {
+                Console.WriteLine("error on count: " + ex);
                 return -1;
 
             }
+        }
+
+        public int GetLastid()
+        {
+            try
+            {
+                var rID = _connection.ExecuteScalar<int>("select last_insert_rowid()");
+                return rID;
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(("error on retreaving id: " + ex));
+                return -1;
+            }
+
+
         }
     }
 }

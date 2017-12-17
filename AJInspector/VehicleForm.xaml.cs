@@ -115,31 +115,47 @@ namespace AJInspector
 
         void Save_Clicked(object sender, System.EventArgs e)
         {
-            string vtype = VType.Items[VType.SelectedIndex];
-            string vtrans = VTrans.Items[VTrans.SelectedIndex];
-            string wheels = Wheels.Items[Wheels.SelectedIndex];
-
-            var record = new Vehicle
+            if (VIN.Text == null)
             {
-                DateIn = Dtoday.Date.ToString(),
-                Inspector = Inspector.Text,
-                VIN = VIN.Text,
-                VType = vtype,
-                Make = VMake.Text,
-                MfYear = MfYear.Text,
-                VModel = VModel.Text,
-                EngCap = EngCap.Text,
-                VTrans = vtrans,
-                Wheels = wheels,
-                Odo = Odo.Text,
-                Driver = Driver.Text,
-                Email = Email.Text,
-                Tel = Tel.Text
-            };
+                if (Inspector.Text == null)
+                {
+                    DisplayAlert("No Vehicle added", "Sorry boss! VIN is blank! We need you to add a vehicle to proceed", "OK");
+                }
+                else
+                {
+                    DisplayAlert("No Vehicle added", "Sorry " + Inspector.Text + "! VIN is blank! We need you to add a vehicle to proceed", "OK");
+                }
+            }
+            else
+            {
+                string vtype = VType.Items[VType.SelectedIndex];
+                string vtrans = VTrans.Items[VTrans.SelectedIndex];
+                string wheels = Wheels.Items[Wheels.SelectedIndex];
 
-            vehicleData.SaveItem(record, 0);
-            DisplayAlert("+ Vehicle", VMake.Text + " with driver " + Driver.Text + " added succesfully", "OK");
-            Navigation.PushModalAsync(new AJInspectorPage());
+                var record = new Vehicle
+                {
+                    DateIn = Dtoday.Date.ToString(),
+                    Inspector = Inspector.Text,
+                    VIN = VIN.Text,
+                    VType = vtype,
+                    Make = VMake.Text,
+                    MfYear = MfYear.Text,
+                    VModel = VModel.Text,
+                    EngCap = EngCap.Text,
+                    VTrans = vtrans,
+                    Wheels = wheels,
+                    Odo = Odo.Text,
+                    Driver = Driver.Text,
+                    Email = Email.Text,
+                    Tel = Tel.Text
+                };
+
+                vehicleData.SaveItem(record, 0);
+                DisplayAlert("+ Vehicle", VMake.Text + " with driver " + Driver.Text + " added succesfully", "OK");
+
+                Navigation.PushModalAsync(new AJInspectorPage());
+            }
+
 
         }
     }

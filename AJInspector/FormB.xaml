@@ -166,7 +166,7 @@
                     </StackLayout> -->
                                        
                     <StackLayout Margin="0,20">
-                        <Editor TextColor="Silver" Text="Enter defect detail here" HeightRequest="120" />
+                        <Editor x:Name="detailInfo" TextColor="Silver" Text="Enter defect detail here" HeightRequest="120" />
 
                     </StackLayout>
                     <StackLayout>

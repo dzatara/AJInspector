@@ -89,7 +89,7 @@ namespace AJInspector
         public int DetailID { get; set; }
 
         [ForeignKey(typeof(Report))]
-        public int ReportID { get; set; }
+        public int VID { get; set; }
 
         public string Orientation { get; set; }
 
@@ -99,7 +99,7 @@ namespace AJInspector
 
         public override string ToString()
         {
-            return string.Format("[Detail: DetailID={0}, ReportID={1}, Orientation={2}, Picture={3}, IssueDetail={4}]", DetailID, ReportID, Orientation, Picture, IssueDetail);
+            return string.Format("[Detail: DetailID={0}, VID={1}, Orientation={2}, Picture={3}, IssueDetail={4}]", DetailID, VID, Orientation, Picture, IssueDetail);
         }
     }
 
@@ -109,7 +109,7 @@ namespace AJInspector
         public int MID { get; set; }
 
         [ForeignKey(typeof(Report))]
-        public int ReportID { get; set; }
+        public int VID { get; set; }
 
         public string EngineOilLevel { get; set; }
 
@@ -157,7 +157,7 @@ namespace AJInspector
 
         public override string ToString()
         {
-            return string.Format("[Mechanical: MID={0}, ReportID={1}, EngineOilLevel={2}, EngineOilQuality={3}, CoolantLevel={4}, WasherFluidLevel={5}, IgnitionSystem={6}, Compressor={7}, FrontSuspension={8}, BreakPad={9}, FrontTyre={10}, RearTyre={11}, FrontFogLamps={12}, MainHeadLamps={13}, BreakLamps={14}, Trafficindicator={15}, Cabinlights={16}, BootLamps={17}, FrontSeatBelt={18}, RearSeatBelts={19}, Upholstry={20}, SeatAdjustment={21}, ClimateControl={22}, Radio={23}]", MID, ReportID, EngineOilLevel, EngineOilQuality, CoolantLevel, WasherFluidLevel, IgnitionSystem, Compressor, FrontSuspension, BreakPad, FrontTyre, RearTyre, FrontFogLamps, MainHeadLamps, BreakLamps, Trafficindicator, Cabinlights, BootLamps, FrontSeatBelt, RearSeatBelts, Upholstry, SeatAdjustment, ClimateControl, Radio);
+            return string.Format("[Mechanical: MID={0}, VID={1}, EngineOilLevel={2}, EngineOilQuality={3}, CoolantLevel={4}, WasherFluidLevel={5}, IgnitionSystem={6}, Compressor={7}, FrontSuspension={8}, BreakPad={9}, FrontTyre={10}, RearTyre={11}, FrontFogLamps={12}, MainHeadLamps={13}, BreakLamps={14}, Trafficindicator={15}, Cabinlights={16}, BootLamps={17}, FrontSeatBelt={18}, RearSeatBelts={19}, Upholstry={20}, SeatAdjustment={21}, ClimateControl={22}, Radio={23}]", MID, VID, EngineOilLevel, EngineOilQuality, CoolantLevel, WasherFluidLevel, IgnitionSystem, Compressor, FrontSuspension, BreakPad, FrontTyre, RearTyre, FrontFogLamps, MainHeadLamps, BreakLamps, Trafficindicator, Cabinlights, BootLamps, FrontSeatBelt, RearSeatBelts, Upholstry, SeatAdjustment, ClimateControl, Radio);
         }
 
 
