@@ -137,6 +137,7 @@ namespace AJInspector
                     DateIn = Dtoday.Date.ToString(),
                     Inspector = Inspector.Text,
                     VIN = VIN.Text,
+                    VReg = VReg.Text,
                     VType = vtype,
                     Make = VMake.Text,
                     MfYear = MfYear.Text,

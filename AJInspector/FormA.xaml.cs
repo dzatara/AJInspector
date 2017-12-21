@@ -110,7 +110,7 @@ namespace AJInspector
 
         #endregion
 
-        void FormB_Clicked(object sender, System.EventArgs e)
+        void FormB_ClickedAsync(object sender, System.EventArgs e)
         {
 
             if (VIN.Text == null)
@@ -135,6 +135,7 @@ namespace AJInspector
                     DateIn = Dtoday.Date.ToString(),
                     Inspector = Inspector.Text,
                     VIN = VIN.Text,
+                    VReg = VReg.Text,
                     VType = vtype,
                     Make = VMake.Text,
                     MfYear = MfYear.Text,

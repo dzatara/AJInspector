@@ -25,7 +25,6 @@ namespace AJInspector
             database.CreateTable<Detail>();
             database.CreateTable<Mechanical>();
 
-            RecentList = new ObservableCollection<Vehicle>(database.GetItems<Vehicle>());
         }
 
 
@@ -34,10 +33,21 @@ namespace AJInspector
             base.OnAppearing();
             // DisplayAlert("Database - 'Inspector'", "Database and tables created succesfully", "OK");
             DisplayAlert("Database", "Database now contains: " + database.FindNumberRecords() + " Vehicle Entries", "OK");
-            //this.BindingContext = this.database;
+            this.BindingContext = this.database;
 
+            RecentList = new ObservableCollection<Vehicle>(database.GetAllVehicles());
+            var RList = database.GetAllVehicles();
 
-            // NewVehicles.ItemsSource = RecentList;
+            if (RecentList != null)
+            {
+                NewVehicles.ItemsSource = RecentList;
+            }
+            else
+            {
+                DisplayAlert("Oops", "No Vehicles in List", "ok");
+
+            }
+
         }
 
         void Find_SearchButtonPressed(object sender, System.EventArgs e)

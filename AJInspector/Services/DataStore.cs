@@ -107,16 +107,27 @@ namespace AJInspector
         {
             try
             {
-                var rID = _connection.ExecuteScalar<int>("select last_insert_rowid()");
+                var rID = _connection.ExecuteScalar<int>("Select last_insert_rowid()");
                 return rID;
             }
             catch (SQLiteException ex)
             {
-                Console.WriteLine(("error on retreaving id: " + ex));
+                Console.WriteLine("error on getting id: " + ex);
                 return -1;
             }
+        }
 
-
+        public List<Vehicle> GetAllVehicles()
+        {
+            try
+            {
+                return _connection.Query<Vehicle>("Select * From [Vehicle] Order By [VehicleID] Desc Limit 7");
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("error on getting Vehicle List: " + ex);
+                return null;
+            }
         }
     }
 }

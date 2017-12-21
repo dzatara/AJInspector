@@ -2,6 +2,7 @@
 <ContentPage
 	xmlns ="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   
 	x:Class="AJInspector.MenuPage"
     Padding="10"
     BackgroundColor="Gray"
@@ -9,10 +10,11 @@
 
 
             <ContentPage.Content>
+            <StackLayout>
 
-                <StackLayout Margin="5,30,5,5">
-                    <Label Text="AInspector Menu">
-                    </Label>
+                <StackLayout Margin="5,30,5,20">
+                    <!--Label Text="AInspector Menu">
+                    </Label-->
                     <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" SearchButtonPressed="Find_SearchButtonPressed" >
                     </SearchBar>
                     <Button Text="Inspect" BackgroundColor="Lime" Clicked="FormA_Clicked">
@@ -20,26 +22,27 @@
                     <Button Text="+ Client Record" BackgroundColor="Silver" Clicked="AddVehicle_Clicked">
                     </Button>
                 </StackLayout>
-
-                <!--ListView x:Name="NewVehicles" ItemsSource="{Binding .}">
+                    <Label Text="Recent Vehicles" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18"/>
+                <ListView x:Name="NewVehicles">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                            <ViewCell>
                               
-                                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                    <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
-                                        <Label x:Name="TheMake" Text="{Binding Make}" ></Label>
-                                        <Label x:Name="TheModel" Text="{Binding VModel}" ></Label>
-                                        <Label x:Name="TheReg" Text="{Binding VReg}" ></Label>
+                                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="345">
+                                    <StackLayout Padding="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="{Binding VehicleID}" FontFamily="Roboto-Black.ttf#Roboto-Black" ></Label>
+                                        <Label Text="{Binding Make}" ></Label>
+                                        <Label Text="{Binding VModel}" ></Label>
+                                        <Label Text="{Binding VReg}" ></Label>
                                     </StackLayout>
-                                        <Button Text="?" HorizontalOptions="EndAndExpand"></Button>
+                                        <Button Text="»" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" WidthRequest="40" BackgroundColor="Gray"></Button>
                                 </StackLayout>
                                 
                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView-->
-                
+                </ListView>
+            </StackLayout>    
             </ContentPage.Content>
         
 </ContentPage>
