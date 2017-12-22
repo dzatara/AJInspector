@@ -11,7 +11,21 @@
             <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
           
                 <StackLayout Orientation="Vertical" Margin="15,30,15,15">
-                                                                      
+                    <StackLayout HeightRequest="60" VerticalOptions="Start">
+                        <ListView x:Name= "TheVehicle">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Black" HorizontalOptions="Center" Padding="10">                                            
+                                            <Label Text="{Binding Make}" TextColor="Silver"></Label>
+                                            <Label Text="{Binding VModel}" TextColor="Silver"></Label>
+                                            <Label Text="{Binding VReg}" TextColor="Silver"></Label>                                          
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>                                                  
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="60"></RowDefinition>
@@ -59,7 +73,7 @@
                             <Image Source="CarRR3_4.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="6"/>
                             <Button x:Name="b7" BackgroundColor="Transparent" BorderColor="Transparent" Grid.Row="0" Grid.Column="6" Clicked="CarRR3_Clicked"/>
                         </Grid>
-                        <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                        <Button BorderRadius="30" WidthRequest="50" BackgroundColor="#F7931E" Text="+" TextColor="Silver" HorizontalOptions="End" VerticalOptions="Center" Clicked="AddDetail_Clicked" Grid.Row="0" Grid.Column="1"/>
                         <Image x:Name="thumb" Source="CarFront.png" Aspect="AspectFill" HorizontalOptions="Start" WidthRequest="170" Grid.Row="2" Grid.Column="0"/>
                         <Grid Grid.Row="2" Grid.Column="0" Margin="5,5,5,5">
                             <Grid.RowDefinitions>
@@ -173,6 +187,27 @@
                         <Button Text="Next >>" BackgroundColor="Lime" Clicked="FormC_Clicked"/> 
                     </StackLayout>
 
+                    <StackLayout Margin="0.10.0.0">
+                        <ListView x:Name="NewDetail">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                   <ViewCell>
+                                      
+                                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="345" BackgroundColor="#000000">
+                                            <StackLayout Padding="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="Center">
+                                                
+                                                <Label Text="{Binding DetailID}" TextColor="Olive" FontFamily="Roboto-Black.ttf#Roboto-Black" ></Label>
+                                                <Image Source="{Binding Picture}" WidthRequest="100" ></Image>
+                                                <Label Text="{Binding IssueDetail}" TextColor="Olive" FontSize="10" ></Label>
+                                            </StackLayout>
+                                                <Label Text="»" WidthRequest="40" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" TextColor="Olive"></Label>
+                                        </StackLayout>
+                                        
+                                   </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
                 </StackLayout>
 
             </ScrollView>

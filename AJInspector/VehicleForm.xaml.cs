@@ -38,7 +38,7 @@ namespace AJInspector
         {
             var OdoReading = Odo.Text;
             var number = DumbParse(OdoReading);
-            Odo.Text = $"{number:#,###}";
+            Odo.Text = $"{number:#,###,###}";
         }
 
         void Tel_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)

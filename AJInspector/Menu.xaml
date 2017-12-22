@@ -10,39 +10,39 @@
 
 
             <ContentPage.Content>
-            <StackLayout>
+                <StackLayout>
 
-                <StackLayout Margin="5,30,5,20">
-                    <!--Label Text="AInspector Menu">
-                    </Label-->
-                    <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" SearchButtonPressed="Find_SearchButtonPressed" >
-                    </SearchBar>
-                    <Button Text="Inspect" BackgroundColor="Lime" Clicked="FormA_Clicked">
-                    </Button>
-                    <Button Text="+ Client Record" BackgroundColor="Silver" Clicked="AddVehicle_Clicked">
-                    </Button>
-                </StackLayout>
-                    <Label Text="Recent Vehicles" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18"/>
-                <ListView x:Name="NewVehicles">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                           <ViewCell>
-                              
-                                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="345">
-                                    <StackLayout Padding="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal">
-                                        <Label Text="{Binding VehicleID}" FontFamily="Roboto-Black.ttf#Roboto-Black" ></Label>
-                                        <Label Text="{Binding Make}" ></Label>
-                                        <Label Text="{Binding VModel}" ></Label>
-                                        <Label Text="{Binding VReg}" ></Label>
+                    <StackLayout Margin="5,30,5,20">
+                        <!--Label Text="AInspector Menu">
+                        </Label-->
+                        <SearchBar Placeholder="search" PlaceholderColor="Gray" HorizontalOptions="Center" SearchButtonPressed="Find_SearchButtonPressed" >
+                        </SearchBar>
+                        <Button Text="Inspect" BackgroundColor="Lime" Clicked="FormA_Clicked">
+                        </Button>
+                        <Button Text="+ Client Record" BackgroundColor="Silver" Clicked="AddVehicle_Clicked">
+                        </Button>
+                    </StackLayout>
+                        <Label Text="Recent Vehicles" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18"/>
+                    <ListView x:Name="NewVehicles">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                               <ViewCell>
+                                  
+                                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="345">
+                                        <StackLayout Padding="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="{Binding VehicleID}" FontFamily="Roboto-Black.ttf#Roboto-Black" ></Label>
+                                            <Label Text="{Binding Make}" ></Label>
+                                            <Label Text="{Binding VModel}" ></Label>
+                                            <Label Text="{Binding VReg}" ></Label>
+                                        </StackLayout>
+                                            <Button Text="»" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" WidthRequest="40" BackgroundColor="Gray"></Button>
                                     </StackLayout>
-                                        <Button Text="»" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" WidthRequest="40" BackgroundColor="Gray"></Button>
-                                </StackLayout>
-                                
-                           </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>    
+                                    
+                               </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>    
             </ContentPage.Content>
         
 </ContentPage>

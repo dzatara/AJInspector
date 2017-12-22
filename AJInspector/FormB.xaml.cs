@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Plugin.Media;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 
@@ -12,15 +13,21 @@ namespace AJInspector
         string picLocation;
         string angle;
         string dlocation;
-        int vId = Convert.ToInt32(Application.Current.Properties["currentVehicle"]);
+        int vId;
 
-
+        //DECLARATIONS
         private DataStore detailData;
 
-        public FormB()
+        public ObservableCollection<Detail> RecentDetail { get; set; }
+        public ObservableCollection<Vehicle> CurrentVehicle { get; set; }
+
+
+        //FromB
+        public FormB(int vID)
         {
             InitializeComponent();
             detailData = new DataStore("Inspector");
+            vId = vID;
 
             takePhoto.Clicked += async (sender, args) =>
             {
@@ -53,21 +60,96 @@ namespace AJInspector
             };
         }
 
+        //OnAppearing
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.BindingContext = this.detailData;
+
+            ShowVehicle();
+            ShowDetail();
+        }
+
+        //ShowVehicle
+        void ShowVehicle()
+        {
+            CurrentVehicle = new ObservableCollection<Vehicle>(detailData.GetVehicle(vId));
+
+            if (CurrentVehicle != null)
+            {
+                TheVehicle.ItemsSource = CurrentVehicle;
+            }
+            else
+            {
+                DisplayAlert("Oops", "No Vehicle in List", "ok");
+            }
+        }
+
+        //AddDetail_Clicked
+        void AddDetail_Clicked(object sender, System.EventArgs e)
+        {
+            if (detailInfo.Text == null)
+            {
+
+                DisplayAlert("No detail added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
+
+            }
+            else
+            {
+                var filename = angle + "-" + dlocation + ".jpg";
+                var record = new Detail
+                {
+                    VID = vId,
+                    Orientation = filename,
+                    Picture = picLocation,
+                    IssueDetail = detailInfo.Text,
+
+                };
+
+                detailData.SaveItem(record, 0);
+
+
+                int lastid = detailData.GetLastid();
+
+
+                DisplayAlert("+ Detail", "Detail record " + lastid + " added succesfully", "OK");
+                ShowDetail();
+                ClearFormB();
+            }
+        }
+
+        //ShowDetail
+        void ShowDetail()
+        {
+            RecentDetail = new ObservableCollection<Detail>(detailData.GetAllDetails());
+
+            if (RecentDetail != null)
+            {
+                NewDetail.ItemsSource = RecentDetail;
+            }
+            else
+            {
+                DisplayAlert("Oops", "No Details in List", "OK");
+
+            }
+        }
+
+        //FormC_Clicked
         void FormC_Clicked(object sender, System.EventArgs e)
         {
             if (detailInfo.Text == null)
             {
 
-                DisplayAlert("No Vehicle added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
+                DisplayAlert("No Detail added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
 
             }
             else
             {
-
+                var filename = angle + "-" + dlocation + ".jpg";
                 var record = new Detail
                 {
                     VID = vId,
-                    Orientation = "",
+                    Orientation = filename,
                     Picture = picLocation,
                     IssueDetail = detailInfo.Text,
 
@@ -86,6 +168,12 @@ namespace AJInspector
             }
         }
 
+        //ClearFormB
+        void ClearFormB()
+        {
+            detailInfo.Text = "";
+            image.Source = "";
+        }
 
         void CarFront_Clicked(object sender, System.EventArgs e)
         {
@@ -99,6 +187,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarFront";
             #endregion
         }
 
@@ -114,6 +203,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarFL3_4";
             #endregion
         }
 
@@ -129,6 +219,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarLTop";
             #endregion
         }
 
@@ -144,6 +235,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarSide";
             #endregion
         }
 
@@ -159,6 +251,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0.3);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarRL3_4";
             #endregion
         }
 
@@ -174,6 +267,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0.3);
             b7.BackgroundColor = new Color(255, 255, 255, 0);
+            angle = "CarRear";
             #endregion
         }
 
@@ -189,6 +283,7 @@ namespace AJInspector
             b5.BackgroundColor = new Color(255, 255, 255, 0);
             b6.BackgroundColor = new Color(255, 255, 255, 0);
             b7.BackgroundColor = new Color(255, 255, 255, 0.3);
+            angle = "CarRR3_4";
             #endregion
         }
 
@@ -202,6 +297,7 @@ namespace AJInspector
             else
             {
                 markerImage.Source = "marker.png";
+                dlocation = "0";
             }
 
         }
@@ -214,6 +310,7 @@ namespace AJInspector
             else
             {
                 markerImage1.Source = "marker.png";
+                dlocation = "1";
             }
 
         }
@@ -226,6 +323,7 @@ namespace AJInspector
             else
             {
                 markerImage2.Source = "marker.png";
+                dlocation = "2";
             }
 
         }
@@ -238,6 +336,7 @@ namespace AJInspector
             else
             {
                 markerImage3.Source = "marker.png";
+                dlocation = "3";
             }
 
         }
@@ -250,6 +349,7 @@ namespace AJInspector
             else
             {
                 markerImage4.Source = "marker.png";
+                dlocation = "4";
             }
 
         }
@@ -262,6 +362,7 @@ namespace AJInspector
             else
             {
                 markerImage5.Source = "marker.png";
+                dlocation = "5";
             }
 
         }
@@ -274,6 +375,7 @@ namespace AJInspector
             else
             {
                 markerImage6.Source = "marker.png";
+                dlocation = "6";
             }
 
         }
@@ -286,6 +388,7 @@ namespace AJInspector
             else
             {
                 markerImage7.Source = "marker.png";
+                dlocation = "7";
             }
 
         }
@@ -298,6 +401,7 @@ namespace AJInspector
             else
             {
                 markerImage8.Source = "marker.png";
+                dlocation = "8";
             }
 
         }
@@ -310,6 +414,7 @@ namespace AJInspector
             else
             {
                 markerImage9.Source = "marker.png";
+                dlocation = "9";
             }
 
         }
@@ -322,6 +427,7 @@ namespace AJInspector
             else
             {
                 markerImage10.Source = "marker.png";
+                dlocation = "10";
             }
 
         }
@@ -334,6 +440,7 @@ namespace AJInspector
             else
             {
                 markerImage11.Source = "marker.png";
+                dlocation = "11";
             }
 
         }
@@ -346,6 +453,7 @@ namespace AJInspector
             else
             {
                 markerImage12.Source = "marker.png";
+                dlocation = "12";
             }
 
         }
@@ -358,6 +466,7 @@ namespace AJInspector
             else
             {
                 markerImage13.Source = "marker.png";
+                dlocation = "13";
             }
 
         }
@@ -370,6 +479,7 @@ namespace AJInspector
             else
             {
                 markerImage14.Source = "marker.png";
+                dlocation = "14";
             }
 
         }
@@ -382,6 +492,7 @@ namespace AJInspector
             else
             {
                 markerImage15.Source = "marker.png";
+                dlocation = "15";
             }
 
         }
@@ -394,6 +505,7 @@ namespace AJInspector
             else
             {
                 markerImage16.Source = "marker.png";
+                dlocation = "16";
             }
 
         }
@@ -406,6 +518,7 @@ namespace AJInspector
             else
             {
                 markerImage17.Source = "marker.png";
+                dlocation = "17";
             }
 
         }
@@ -418,6 +531,7 @@ namespace AJInspector
             else
             {
                 markerImage18.Source = "marker.png";
+                dlocation = "18";
             }
 
         }
@@ -430,6 +544,7 @@ namespace AJInspector
             else
             {
                 markerImage19.Source = "marker.png";
+                dlocation = "19";
             }
 
         }
@@ -442,6 +557,7 @@ namespace AJInspector
             else
             {
                 markerImage20.Source = "marker.png";
+                dlocation = "20";
             }
 
         }
@@ -454,6 +570,7 @@ namespace AJInspector
             else
             {
                 markerImage21.Source = "marker.png";
+                dlocation = "21";
             }
 
         }
@@ -466,6 +583,7 @@ namespace AJInspector
             else
             {
                 markerImage22.Source = "marker.png";
+                dlocation = "22";
             }
 
         }
@@ -478,6 +596,7 @@ namespace AJInspector
             else
             {
                 markerImage23.Source = "marker.png";
+                dlocation = "23";
             }
 
         }
@@ -490,6 +609,7 @@ namespace AJInspector
             else
             {
                 markerImage24.Source = "marker.png";
+                dlocation = "24";
             }
 
         }

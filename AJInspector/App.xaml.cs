@@ -11,8 +11,8 @@ namespace AJInspector
         public static bool UseMockDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
         MasterDetailPage masterdetail;
-        Page detailpage;
-        Page masterpage;
+        //Page detailpage;
+        //Page masterpage;
 
 
         public App()
@@ -35,9 +35,9 @@ namespace AJInspector
         protected override void OnStart()
         {
 
-            masterpage = masterdetail.Master;
-            detailpage = masterdetail.Detail;
-            MainPage = masterdetail;
+            // masterpage = masterdetail.Master;
+            // detailpage = masterdetail.Detail;
+            //MainPage = masterdetail;
         }
 
 

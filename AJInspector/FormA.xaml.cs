@@ -35,7 +35,7 @@ namespace AJInspector
         {
             var OdoReading = Odo.Text;
             var number = DumbParse(OdoReading);
-            Odo.Text = $"{number:#,###}";
+            Odo.Text = $"{number:#,###,###}";
         }
 
         void Tel_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
@@ -159,7 +159,7 @@ namespace AJInspector
                 DisplayAlert("+ Vehicle", VMake.Text + " with driver " + Driver.Text + " added succesfully", "OK");
                 DisplayAlert("ID", "last ID value saved is " + lastid, "OK");
 
-                Navigation.PushAsync(new FormB());
+                Navigation.PushAsync(new FormB(lastid));
             }
 
         }

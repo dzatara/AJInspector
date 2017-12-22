@@ -88,6 +88,10 @@ namespace AJInspector
             lock (locker) { return _connection.DeleteAll<T>(); }
         }
 
+
+        //__+++===== Far more Useful methods ============================================================+++++
+
+
         public int FindNumberRecords()
         {
             try
@@ -126,6 +130,31 @@ namespace AJInspector
             catch (SQLiteException ex)
             {
                 Console.WriteLine("error on getting Vehicle List: " + ex);
+                return null;
+            }
+        }
+        public List<Detail> GetAllDetails()
+        {
+            try
+            {
+                return _connection.Query<Detail>("Select * From [Detail] Order By [DetailID]");
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("error on getting Detail List: " + ex);
+                return null;
+            }
+        }
+
+        public List<Vehicle> GetVehicle(int ID)
+        {
+            try
+            {
+                return _connection.Query<Vehicle>("Select * From [Vehicle] Where [VehicleID] = ?", ID);
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("error on getting Vehicle item:" + ex);
                 return null;
             }
         }

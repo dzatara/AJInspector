@@ -58,13 +58,15 @@ namespace AJInspector
 
         void FormA_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new FormA());
+            //Navigation.PushAsync(new FormA());
+            //Application.Current.MainPage = new AJInspectorPage { Detail = new NavigationPage(new FormA()) };
 
         }
 
         void AddVehicle_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new VehicleForm());
+            //Navigation.PushAsync(new VehicleForm());
+            //Application.Current.MainPage = new AJInspectorPage {Detail = new NavigationPage()}
         }
     }
 }
