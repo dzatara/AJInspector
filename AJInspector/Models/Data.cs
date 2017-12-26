@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
-using Xamarin.Forms;
 
 namespace AJInspector
 {

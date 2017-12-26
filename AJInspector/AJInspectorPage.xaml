@@ -17,10 +17,10 @@
                         </SearchBar>
                         <Button Text="Inspect" BackgroundColor="Lime" Clicked="FormA_Clicked">
                         </Button>
-                        <Button Text="+ Client Record" BackgroundColor="Silver" Clicked="AddVehicle_Clicked">
+                        <Button Text="+ Client Record" BackgroundColor="Yellow" Clicked="AddVehicle_Clicked">
                         </Button>
                     </StackLayout>
-                        <Label Text="Recent Vehicles" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18"/>
+                        <Label Text="Recent Vehicles" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="White" FontSize="18"/>
                     <ListView x:Name="NewVehicles">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -33,7 +33,7 @@
                                             <Label Text="{Binding VModel}" ></Label>
                                             <Label Text="{Binding VReg}" ></Label>
                                         </StackLayout>
-                                            <Button Text="{Binding VehicleID}" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" WidthRequest="40" BackgroundColor="Yellow" Clicked="Handle_Clicked"></Button>
+                                            <Button Text="{Binding VehicleID}" BorderRadius="20" FontFamily="Roboto-Black.ttf#Roboto-Black" HorizontalOptions="EndAndExpand" WidthRequest="40" BackgroundColor="Silver" Clicked="Handle_Clicked"></Button>
                                     </StackLayout>
                                     
                                </ViewCell>

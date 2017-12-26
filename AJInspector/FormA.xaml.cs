@@ -20,7 +20,7 @@ namespace AJInspector
         public FormA()
         {
             InitializeComponent();
-            Dtoday.Date = DateTime.Today;
+
             vehicleData = new DataStore("Inspector");
 
         }
@@ -28,6 +28,7 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Dtoday.Date = DateTime.Today;
             //this.BindingContext = this.vehicleData;
         }
 
@@ -156,8 +157,8 @@ namespace AJInspector
                 Application.Current.Properties["currentVehicle"] = lastid;
                 Application.Current.SavePropertiesAsync();
 
-                DisplayAlert("+ Vehicle", VMake.Text + " with driver " + Driver.Text + " added succesfully", "OK");
-                DisplayAlert("ID", "last ID value saved is " + lastid, "OK");
+                // DisplayAlert("+ Vehicle", VMake.Text + " with driver " + Driver.Text + " added succesfully", "OK");
+                // DisplayAlert("ID", "last ID value saved is " + lastid, "OK");
 
                 Navigation.PushAsync(new FormB(lastid));
             }

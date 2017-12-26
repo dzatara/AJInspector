@@ -12,11 +12,25 @@
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">          
 
             <StackLayout Orientation="Vertical" Margin="15,30,15,15">
-
+                <StackLayout HeightRequest="60" VerticalOptions="Start">
+                        <ListView x:Name= "TheVehicle">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" BackgroundColor="Black" HorizontalOptions="Center" Padding="10">                                            
+                                            <Label Text="{Binding Make}" TextColor="Silver"></Label>
+                                            <Label Text="{Binding VModel}" TextColor="Silver"></Label>
+                                            <Label Text="{Binding VReg}" TextColor="Silver"></Label>                                          
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </StackLayout>
                 <StackLayout Orientation="Horizontal" >
                     <StackLayout Orientation="Vertical">
-                        <Label Text="Mechanical Condition" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="165" TextColor="#F7931E" FontSize="18"/>
-                        <Label Text="Set a range of satisfaction for each item" WidthRequest="165" TextColor="Silver" FontAttributes="Italic"/>
+                        <Label Text="Mechanical Condition" FontFamily="Roboto-Black.ttf#Roboto-Black" WidthRequest="265" TextColor="#F7931E" FontSize="18"/>
+                        <Label Text="Set a rating of satisfaction for each item" WidthRequest="265" TextColor="Silver" FontAttributes="Italic"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         
@@ -27,95 +41,120 @@
                 
                 <StackLayout Orientation="Horizontal">
                     <StackLayout Orientation="Vertical">                    
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Engine Oil Level" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Engine Oil quality" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Coolant Level" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Washer Fluid Level" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Ignition System" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Compressor" WidthRequest="200" TextColor="Silver" />
-                    </StackLayout>
-                    <StackLayout>
-                        <Picker x:Name="EngineOilLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" ><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="EngineOilQuality" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="CoolantLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="WasherFluidLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="IgnitionSystem" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="Compressor" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Engine Oil Level" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="EngineOilLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged" ><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Engine Oil quality" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="EngineOilQuality" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>    
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Coolant Level" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="CoolantLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Washer Fluid Level" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="WasherFluidLevel" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Ignition System" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="IgnitionSystem" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Compressor" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="Compressor" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>   
                     </StackLayout>
                 </StackLayout>
 
                 <Label Text="Suspension Condition" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                 
                 <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">                    
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Suspension" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Break Pad Condition" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Tyre Condition" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Rear Tyre Condition" WidthRequest="200" TextColor="Silver" />
-
-                    </StackLayout>
-                    <StackLayout>
-                        <Picker x:Name="FrontSuspension" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="BreakPadCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="FrontTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="RearTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Suspension" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="FrontSuspension" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Break Pad Condition" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="BreakPadCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Tyre Condition" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="FrontTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Rear Tyre Condition" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="RearTyreCondition" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
                     </StackLayout>
                 </StackLayout>
 
                 <Label Text="Lighting System" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                 
                 <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">                    
-                        <Entry Text="Front Fog Lamps" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-                        <Entry Text="Main Headlamps" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-                        <Entry Text="Break Lamps" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-                        <Entry Text="Traffic Indicator Lamps" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-                        <Entry Text="Cabin Lights" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-                        <Entry Text="Boot Lights" WidthRequest="200" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6"/>
-
-                    </StackLayout>
-                    <StackLayout>
-                        <Picker x:Name="FrontFogLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="MainHeadlamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="BreakLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="TrafficIndicatorLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="CabinLights" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="BootLights" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Front Fog Lamps" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                            <Picker x:Name="FrontFogLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Main Headlamps" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                            <Picker x:Name="MainHeadlamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Break Lamps" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                             <Picker x:Name="BreakLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Traffic Indicator Lamps" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                            <Picker x:Name="TrafficIndicatorLamps" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Cabin Lights" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                            <Picker x:Name="CabinLights" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Boot Lights" WidthRequest="240" TextColor="Silver" IsEnabled="false" BackgroundColor="#E6E6E6" FontSize="13"/>
+                            <Picker x:Name="BootLights" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout> 
                     </StackLayout>
                 </StackLayout>
 
                 <Label Text="Passenger Comfort" TextColor="Silver" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18"/>
                 
                 <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">                    
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Seat Belts" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Rear Seat Belts" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Upholstry" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Seat Adjustment Mechanism" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Climate Control System" WidthRequest="200" TextColor="Silver" />
-                        <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Radio" WidthRequest="200" TextColor="Silver" />
-
-                    </StackLayout>
-                    <StackLayout>
-                        <Picker x:Name="FrontSeatBelts" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="RearSeatBelts" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="Upholstry" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="SeatAdjustmentMechanism" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="ClimateControl" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-                        <Picker x:Name="Radio" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
-
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Front Seat Belts" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="FrontSeatBelts" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Rear Seat Belts" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="RearSeatBelts" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Upholstry" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="Upholstry" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Seat Adjustment Mechanism" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="SeatAdjustmentMechanism" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Climate Control System" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="ClimateControl" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Entry IsEnabled="false" BackgroundColor="#E6E6E6" Text="Radio" WidthRequest="240" TextColor="Silver" FontSize="13"/>
+                            <Picker x:Name="Radio" Title="% quality" WidthRequest="100" BackgroundColor="Gray" TextColor="Silver" Scale="0.9" SelectedIndexChanged="Handle_SelectedIndexChanged"><Picker.ItemsSource><x:Array Type="{x:Type x:String}"><x:String>100 - 75</x:String><x:String>75 - 50</x:String><x:String>50 - 25</x:String><x:String>25 - 0</x:String></x:Array></Picker.ItemsSource></Picker>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
-                    <StackLayout Orientation="Vertical">
-                        <Button Text="Save to Cloud >>" BackgroundColor="#29ABE2" TextColor="White" Clicked="FormD_Clicked" WidthRequest="165"/>                   
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
-                        <Button Text="Mail Report >>" BackgroundColor="#93278F" TextColor="White" Clicked="FormD_Clicked" WidthRequest="165"/>                   
-                    </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" >
+                        <Button Text="Get Report >>" BackgroundColor="#29ABE2" TextColor="White" Clicked="FormD_Clicked" HorizontalOptions="FillAndExpand" />                   
                 </StackLayout>
                 
             </StackLayout>

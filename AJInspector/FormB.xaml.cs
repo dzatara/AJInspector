@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Plugin.Media;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -29,6 +28,7 @@ namespace AJInspector
             detailData = new DataStore("Inspector");
             vId = vID;
 
+            #region Take a picture
             takePhoto.Clicked += async (sender, args) =>
             {
 
@@ -58,6 +58,7 @@ namespace AJInspector
                     return stream;
                 });
             };
+            #endregion
         }
 
         //OnAppearing
@@ -88,15 +89,13 @@ namespace AJInspector
         //AddDetail_Clicked
         void AddDetail_Clicked(object sender, System.EventArgs e)
         {
-            if (detailInfo.Text == null)
+            if (detailInfo.Text == null || detailInfo.Text == "Enter defect detail here")
             {
-
                 DisplayAlert("No detail added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
-
             }
             else
             {
-                var filename = angle + "-" + dlocation + ".jpg";
+                var filename = angle + "_markerImage" + dlocation + ".jpg";
                 var record = new Detail
                 {
                     VID = vId,
@@ -109,10 +108,6 @@ namespace AJInspector
                 detailData.SaveItem(record, 0);
 
 
-                int lastid = detailData.GetLastid();
-
-
-                DisplayAlert("+ Detail", "Detail record " + lastid + " added succesfully", "OK");
                 ShowDetail();
                 ClearFormB();
             }
@@ -121,31 +116,30 @@ namespace AJInspector
         //ShowDetail
         void ShowDetail()
         {
-            RecentDetail = new ObservableCollection<Detail>(detailData.GetAllDetails());
-
-            if (RecentDetail != null)
+            try
             {
+                RecentDetail = new ObservableCollection<Detail>(detailData.GetAllDetails(vId));
                 NewDetail.ItemsSource = RecentDetail;
             }
-            else
+            catch (Exception ex)
             {
-                DisplayAlert("Oops", "No Details in List", "OK");
-
+                Console.WriteLine(ex);
+                DisplayAlert("New Report", "Proceed to perform a detail inspection of the chosen vehicle", "OK");
             }
         }
 
         //FormC_Clicked
         void FormC_Clicked(object sender, System.EventArgs e)
         {
-            if (detailInfo.Text == null)
+            if (detailInfo.Text == null || detailInfo.Text == "Enter defect detail here")
             {
 
-                DisplayAlert("No Detail added", "Sorry! detail is blank! We need you to add notes to proceed", "OK");
+                DisplayAlert("No Detail added", "Sorry! You cant add a blank form! We need you to fill out some notes to proceed", "OK");
 
             }
             else
             {
-                var filename = angle + "-" + dlocation + ".jpg";
+                var filename = angle + "_markerImage" + dlocation + ".jpg";
                 var record = new Detail
                 {
                     VID = vId,
@@ -164,7 +158,7 @@ namespace AJInspector
                 DisplayAlert("+ Detail", "Detail record " + lastid + " added succesfully", "OK");
 
 
-                Navigation.PushAsync(new FormC());
+                Navigation.PushAsync(new FormC(vId));
             }
         }
 

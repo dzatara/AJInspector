@@ -1,15 +1,10 @@
 using System;
-using System.Threading.Tasks;
 
 
 using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
-using Android.Content.PM;
-using Android.Views;
-using Android.Widget;
-using Plugin.Media;
 
 namespace AJInspector.Droid
 {

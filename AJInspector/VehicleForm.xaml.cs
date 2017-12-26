@@ -22,7 +22,7 @@ namespace AJInspector
         public VehicleForm()
         {
             InitializeComponent();
-            Dtoday.Date = DateTime.Today;
+
             vehicleData = new DataStore("Inspector");
 
         }
@@ -30,6 +30,7 @@ namespace AJInspector
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Dtoday.Date = DateTime.Today;
             // this.BindingContext = this.vehicleData;
         }
 

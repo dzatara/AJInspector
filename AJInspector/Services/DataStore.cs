@@ -133,11 +133,11 @@ namespace AJInspector
                 return null;
             }
         }
-        public List<Detail> GetAllDetails()
+        public List<Detail> GetAllDetails(int ID)
         {
             try
             {
-                return _connection.Query<Detail>("Select * From [Detail] Order By [DetailID]");
+                return _connection.Query<Detail>("Select * From [Detail] Where [VID] = ? Order By [DetailID]", ID);
             }
             catch (SQLiteException ex)
             {

@@ -1,8 +1,156 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
 	xmlns ="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="AJInspector.FormD">
-	<ContentPage.Content>
-	</ContentPage.Content>
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+    xmlns:local="clr-namespace:Microcharts.Samples.Forms"
+	x:Class="AJInspector.FormD"
+    Title="Review Report">
+
+    <ContentPage.Content>
+        
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="175"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                        <Image Aspect="AspectFill" Source="autocheck_logo.png" HorizontalOptions="Start" WidthRequest="140" Grid.Row="0" Grid.Column="0" /> 
+                        <Label Text="Inspection Report" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="18" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" >
+                            <microcharts:ChartView x:Name="MechanicalChart" HorizontalOptions="FillAndExpand" HeightRequest="170"/>
+                        </StackLayout>
+                </Grid>
+                 <Label Text="Vehicle Information" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="15" Margin="5,15,0,10"/>                 
+                <ListView x:Name= "TheVehicle" RowHeight="370">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <StackLayout Margin="10,5,10,5" HorizontalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                        <RowDefinition Height="40"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                        <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                                            <Label Text="Inspector:" FontSize="10"  />
+                                            <Label Text="{Binding Inspector}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                                            <Label Text="Driver:" FontSize="10"  />
+                                            <Label Text="{Binding Driver}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"   />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="Driver E-mail:" FontSize="10"  />
+                                            <Label Text="{Binding Email}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"   />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="2">
+                                            <Label Text="Driver Tel:" FontSize="10"  />
+                                            <Label Text="{Binding Tel}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                                            <Label Text="VIN:" FontSize="10"  />
+                                            <Label Text="{Binding VIN}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="3" Grid.Column="2">
+                                            <Label Text="Reg:" FontSize="10"  />
+                                            <Label Text="{Binding VReg}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="0">
+                                            <Label Text="Make:" FontSize="10"  />
+                                            <Label Text="{Binding Make}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+                                            <Label Text="Model:" FontSize="10"  />
+                                            <Label Text="{Binding VModel}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="4" Grid.Column="2">
+                                            <Label Text="Year:" FontSize="10"  />
+                                            <Label Text="{Binding MfYear}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="5" Grid.Column="0">
+                                            <Label Text="Engine Capacity:" FontSize="10"  />
+                                            <Label Text="{Binding EngCap}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="5" Grid.Column="1">
+                                            <Label Text="Transmission:" FontSize="10"  />
+                                            <Label Text="{Binding VTrans}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="5" Grid.Column="2">
+                                            <Label Text="Milage:" FontSize="10"  />
+                                            <Label Text="{Binding Odo}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="6" Grid.Column="0">
+                                            <Label Text="Vehicle Type:" FontSize="10"  />
+                                            <Label Text="{Binding VType}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="6" Grid.Column="1">
+                                            <Label Text="Wheels:" FontSize="10"  />
+                                            <Label Text="{Binding Wheels}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  /> 
+                                        </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                    
+                    <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="15" Margin="5,15,0,10"/> 
+                <ListView x:Name="NewDetail" RowHeight="70">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="5,2,5,2" HeightRequest="40">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding Orientation}" Aspect="AspectFit" Grid.Row="0" Grid.Column="0" WidthRequest="80"/>
+                                            <Image Source="{Binding Picture}" Aspect="AspectFit" Grid.Row="0" Grid.Column="1" WidthRequest="80"/>
+                                            <Label Text="{Binding IssueDetail}" LineBreakMode="WordWrap" FontSize="10" Grid.Row="0" Grid.Column="2" />
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+        	    </ListView>
+            
+                <StackLayout HeightRequest="50" HorizontalOptions="CenterAndExpand" Margin="10">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                            <Button Text="Mail Report" BackgroundColor="#00D83E" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+                            <Button Text="Save To Cloud" BackgroundColor="#A494C9" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
 </ContentPage>
