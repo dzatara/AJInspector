@@ -74,9 +74,13 @@ namespace AJInspector
 
         public int MID { get; set; }
 
+        public string InspectorSign { get; set; }
+
+        public string DriverSign { get; set; }
+
         public override string ToString()
         {
-            return string.Format("[Report: ReportID={0}, VID={1}, Details={2}, MID={3}]", ReportID, VID, Details, MID);
+            return string.Format("[Report: ReportID={0}, VID={1}, Details={2}, MID={3}, InspectorSign={4}, DriverSign={5}]", ReportID, VID, Details, MID, InspectorSign, DriverSign);
         }
 
 

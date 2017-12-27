@@ -96,7 +96,22 @@ namespace AJInspector
         {
             try
             {
-                var count = _connection.ExecuteScalar<int>("SELECT Count (*) FROM Vehicle ");
+                var count = _connection.ExecuteScalar<int>("SELECT Count (*) FROM Vehicle");
+                return count;
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("error on count: " + ex);
+                return -1;
+
+            }
+        }
+
+        public int CountDetails()
+        {
+            try
+            {
+                var count = _connection.ExecuteScalar<int>("SELECT Count (*) FROM Details");
                 return count;
             }
             catch (SQLiteException ex)
@@ -138,6 +153,19 @@ namespace AJInspector
             try
             {
                 return _connection.Query<Detail>("Select * From [Detail] Where [VID] = ? Order By [DetailID]", ID);
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("error on getting Detail List: " + ex);
+                return null;
+            }
+        }
+
+        public List<Mechanical> GetAllMechanicals(int ID)
+        {
+            try
+            {
+                return _connection.Query<Mechanical>("Select * From [Mechanical] Where [VID] = ?", ID);
             }
             catch (SQLiteException ex)
             {

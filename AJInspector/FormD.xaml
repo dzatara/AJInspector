@@ -4,6 +4,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
     xmlns:local="clr-namespace:Microcharts.Samples.Forms"
+    xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
 	x:Class="AJInspector.FormD"
     Title="Review Report">
 
@@ -32,7 +33,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                            <StackLayout Margin="10,5,10,5" HorizontalOptions="FillAndExpand">
+                            <StackLayout Margin="20,5,20,5" HorizontalOptions="FillAndExpand">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="40"></RowDefinition>
@@ -48,9 +49,13 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                        <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                                        <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                                             <Label Text="Inspector:" FontSize="10"  />
                                             <Label Text="{Binding Inspector}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="2">
+                                            <Label Text="Date Of Inspection:" FontSize="10"  />
+                                            <Label Text="{Binding DateIn}" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="12"  />
                                         </StackLayout>
                                         <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
                                             <Label Text="Driver:" FontSize="10"  />
@@ -112,11 +117,11 @@
                 </ListView>
                     
                     <Label Text="Detail Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="15" Margin="5,15,0,10"/> 
-                <ListView x:Name="NewDetail" RowHeight="70">
+                <ListView x:Name="NewDetail" RowHeight="60">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Margin="5,2,5,2" HeightRequest="40">
+                                <StackLayout Margin="20,2,20,2" >
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition></RowDefinition>
@@ -135,6 +140,132 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
         	    </ListView>
+
+                 <Label Text="Mechanical Inspection" FontFamily="Roboto-Black.ttf#Roboto-Black" FontSize="15" Margin="5,15,0,10"/> 
+                <ListView x:Name="MechInspect" RowHeight="550">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="20,2,20,2" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+
+                                        </Grid.ColumnDefinitions>
+                                            <BoxView Color="#EFF5FF" Grid.Row="0" Grid.ColumnSpan="2"/>
+                                            <Label Text="Engine Oil Level" FontSize="10" Grid.Row="0" Grid.Column="0"/>
+                                            <Label Text="{Binding EngineOilLevel}" FontSize="10" Grid.Row="0" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="1" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Engine Oil Quality" FontSize="10" Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding EngineOilQuality}" FontSize="10" Grid.Row="1" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="2" Grid.ColumnSpan="2"/>
+                                            <Label Text="Coolant Level" FontSize="10" Grid.Row="2" Grid.Column="0"/>
+                                            <Label Text="{Binding CoolantLevel}" FontSize="10" Grid.Row="2" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="3" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Washer Fluid Level" FontSize="10" Grid.Row="3" Grid.Column="0"/>
+                                                <Label Text="{Binding WasherFluidLevel}" FontSize="10" Grid.Row="3" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="4" Grid.ColumnSpan="2"/>
+                                            <Label Text="Ignition System" FontSize="10" Grid.Row="4" Grid.Column="0"/>
+                                            <Label Text="{Binding IgnitionSystem}" FontSize="10" Grid.Row="4" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="5" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Compressor" FontSize="10" Grid.Row="5" Grid.Column="0"/>
+                                                <Label Text="{Binding Compressor}" FontSize="10" Grid.Row="5" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="6" Grid.ColumnSpan="2"/>
+                                            <Label Text="Front Suspension" FontSize="10" Grid.Row="6" Grid.Column="0"/>
+                                            <Label Text="{Binding FrontSuspension}" FontSize="10" Grid.Row="6" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="7" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Breakpad" FontSize="10" Grid.Row="7" Grid.Column="0"/>
+                                                <Label Text="{Binding BreakPad}" FontSize="10" Grid.Row="7" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="8" Grid.ColumnSpan="2"/>
+                                            <Label Text="Front Tyre" FontSize="10" Grid.Row="8" Grid.Column="0"/>
+                                            <Label Text="{Binding FrontTyre}" FontSize="10" Grid.Row="8" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="9" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Rear Tyre" FontSize="10" Grid.Row="9" Grid.Column="0"/>
+                                                <Label Text="{Binding RearTyre}" FontSize="10" Grid.Row="9" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="10" Grid.ColumnSpan="2"/>
+                                            <Label Text="Front Fog Lamps" FontSize="10" Grid.Row="10" Grid.Column="0"/>
+                                            <Label Text="{Binding FrontFogLamps}" FontSize="10" Grid.Row="10" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="11" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Main Head Lamps" FontSize="10" Grid.Row="11" Grid.Column="0"/>
+                                                <Label Text="{Binding MainHeadLamps}" FontSize="10" Grid.Row="11" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="12" Grid.ColumnSpan="2"/>
+                                            <Label Text="Break Lamps" FontSize="10" Grid.Row="12" Grid.Column="0"/>
+                                            <Label Text="{Binding BreakLamps}" FontSize="10" Grid.Row="12" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="13" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Traffic Indicator Lights" FontSize="10" Grid.Row="13" Grid.Column="0"/>
+                                                <Label Text="{Binding Trafficindicator}" FontSize="10" Grid.Row="13" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="14" Grid.ColumnSpan="2"/>
+                                            <Label Text="Cabin lights" FontSize="10" Grid.Row="14" Grid.Column="0"/>
+                                            <Label Text="{Binding Cabinlights}" FontSize="10" Grid.Row="14" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="15" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Boot Lights" FontSize="10" Grid.Row="15" Grid.Column="0"/>
+                                                <Label Text="{Binding BootLamps}" FontSize="10" Grid.Row="15" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="16" Grid.ColumnSpan="2"/>
+                                            <Label Text="Front Seatbelt" FontSize="10" Grid.Row="16" Grid.Column="0"/>
+                                            <Label Text="{Binding FrontSeatBelt}" FontSize="10" Grid.Row="16" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="17" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Rear Seatbelts" FontSize="10" Grid.Row="17" Grid.Column="0"/>
+                                                <Label Text="{Binding RearSeatBelts}" FontSize="10" Grid.Row="17" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="18" Grid.ColumnSpan="2"/>
+                                            <Label Text="Upholstry" FontSize="10" Grid.Row="18" Grid.Column="0"/>
+                                            <Label Text="{Binding Upholstry}" FontSize="10" Grid.Row="18" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="19" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Seat Adjustment Mechanisms" FontSize="10" Grid.Row="19" Grid.Column="0"/>
+                                                <Label Text="{Binding SeatAdjustment}" FontSize="10" Grid.Row="19" Grid.Column="1"  />
+                                            <BoxView Color="#EFF5FF" Grid.Row="20" Grid.ColumnSpan="2"/>
+                                            <Label Text="Climate Control" FontSize="10" Grid.Row="20" Grid.Column="0"/>
+                                            <Label Text="{Binding ClimateControl}" FontSize="10" Grid.Row="20" Grid.Column="1"  />
+                                                <BoxView Color="#FFFFFB" Grid.Row="21" Grid.ColumnSpan="2"/>        
+                                                <Label Text="Radio" FontSize="10" Grid.Row="21" Grid.Column="0"/>
+                                                <Label Text="{Binding Radio}" FontSize="10" Grid.Row="21" Grid.Column="1"  /> 
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Margin="10">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                            <Label Text="Instructor Signature" FontSize="12" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="Driver Signature" FontSize="12" Grid.Row="0" Grid.Column="1"/>
+                            <signature:SignaturePadView x:Name="InspectorSign" StrokeWidth="3" StrokeColor="Black" BackgroundColor="Silver" Grid.Row="1" Grid.Column="0"/>
+                            <signature:SignaturePadView x:Name="DriverSign" StrokeWidth="3" StrokeColor="Black" BackgroundColor="Silver" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
             
                 <StackLayout HeightRequest="50" HorizontalOptions="CenterAndExpand" Margin="10">
                     <Grid >
@@ -146,7 +277,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                             <Button Text="Mail Report" BackgroundColor="#00D83E" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
-                            <Button Text="Save To Cloud" BackgroundColor="#A494C9" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+                            <Button Text="Save" BackgroundColor="#A494C9" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
                     </Grid>
                 </StackLayout>
             </StackLayout>

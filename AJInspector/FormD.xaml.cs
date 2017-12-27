@@ -5,6 +5,7 @@ using Microcharts.Forms;
 using Microcharts.Droid;
 using Microcharts;
 using SkiaSharp;
+using SignaturePad;
 using System;
 
 namespace AJInspector
@@ -51,6 +52,7 @@ namespace AJInspector
 
             ShowVehicle();
             ShowDetail();
+            ShowMechanical();
 
 
             var chartSeries = new[]
@@ -65,13 +67,13 @@ namespace AJInspector
                  {
                     Label = "Condition score: 75-50",
                     ValueLabel = MakeAPercentage(B1, Total),
-                     Color = SKColor.Parse("#64BCFF")
+                    Color = SKColor.Parse("#FFD64A")
                  },
                  new Microcharts.Entry (C1)
                  {
                     Label = "Condition score: 50-25",
                     ValueLabel = MakeAPercentage(C1, Total),
-                     Color = SKColor.Parse("#FFD64A")
+                    Color = SKColor.Parse("#FF7700")
                  },
                  new Microcharts.Entry (D1)
                  {
@@ -81,7 +83,7 @@ namespace AJInspector
                  }
              };
 
-            this.MechanicalChart.Chart = new DonutChart { Entries = chartSeries as System.Collections.Generic.IEnumerable<Microcharts.Entry> };
+            this.MechanicalChart.Chart = new DonutChart { Entries = chartSeries };
 
         }
 
@@ -106,7 +108,24 @@ namespace AJInspector
             try
             {
                 RecentDetail = new ObservableCollection<Detail>(ReportData.GetAllDetails(vId));
+                int count = RecentDetail.Count;
                 NewDetail.ItemsSource = RecentDetail;
+                NewDetail.HeightRequest = (count * 65);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                DisplayAlert("Detail Inspection", "No detail record Found", "OK");
+            }
+        }
+
+        //ShowMechanical
+        void ShowMechanical()
+        {
+            try
+            {
+                MechDetail = new ObservableCollection<Mechanical>(ReportData.GetAllMechanicals(vId));
+                MechInspect.ItemsSource = MechDetail;
             }
             catch (Exception ex)
             {

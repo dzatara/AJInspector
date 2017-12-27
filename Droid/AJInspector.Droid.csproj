@@ -222,6 +222,12 @@
     <Reference Include="Microcharts.Forms">
       <HintPath>..\packages\Microcharts.Forms.0.8.3-pre\lib\netstandard1.3\Microcharts.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="SignaturePad">
+      <HintPath>..\packages\Xamarin.Controls.SignaturePad.2.3.0\lib\MonoAndroid\SignaturePad.dll</HintPath>
+    </Reference>
+    <Reference Include="SignaturePad.Forms">
+      <HintPath>..\packages\Xamarin.Controls.SignaturePad.Forms.2.3.0\lib\MonoAndroid\SignaturePad.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
